@@ -1,27 +1,31 @@
+require_relative '../modelo/Mostrar'
+require_relative '../modelo/Pessoa'
+
 class Pesquisador < Pessoa
   include Mostrar
   attr_reader :id 
   attr_accessor :area_atuacao, :cnpq, :afiliacoes
 
-  def initizalize(nome, id, cpf, dt_nasc, area_atuacao, cnpq, afiliacoes)
-    super(nome, id, cpf,, dt_nasc)
+  def initialize(nome, id, cpf, dt_nasc, area_atuacao, afiliacoes)
+    super(nome, id, cpf, dt_nasc)
     @area_atuacao = area_atuacao
-    @cnpq = cnpq
     @afiliacoes = []
   end
 
-  def adicionar_afiliacao
-    afiliacao.vincular_pesquisador(self)
-    @afiliacoes << afiliacao
+  def adicionar_afiliacao(afiliacao)
+    if afiliacao
+      @afiliacoes << afiliacao
+    end
   end
 
   def mostrar_dados
+    puts ""
+    puts "==============================="
     puts "---- Dados do Pesquisador ----"
     puts "ID: #{id}"
     puts "Nome: #{nome}"
     puts "CPF: #{cpf}"
-    puts "CNPQ: #{cnpq}"
-    puts "Data de Nascimento: #{dt_nasc}"
+    puts "Data de Nascimento: #{dt_nasc.strftime('%d/%m/%Y')}"
     puts "Área de Atuação: #{area_atuacao}"
 
     puts "Afiliações:"
@@ -29,21 +33,20 @@ class Pesquisador < Pessoa
       puts "Nenhuma afiliação registrada."
     else
       afiliacoes.each do |a|
-        puts "Instituição: #{a.instituicao_nome}"
-        puts "Início: #{a.dt_inicio}"
-        puts "Tipo: #{a.funcao}"
+        puts "* #{@afiliacao}"
       end
     end
-    puts "==================="
+    puts "==============================="
   end
 
   def mostrar_resumo
+    puts ""
+    puts "==============================="
     puts "--- Resumo do Pesquisador ---"
     puts "ID: #{id}"
     puts "Nome: #{nome}"
-    puts "CPF: #{cpf}"
-    puts "CNPQ: #{cnpq}"
     puts "Área de Atuação: #{area_atuacao}"
+    puts "==============================="
   end
 
 end
