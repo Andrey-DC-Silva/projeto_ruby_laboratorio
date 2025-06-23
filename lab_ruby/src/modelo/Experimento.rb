@@ -10,7 +10,7 @@ class Experimento
   attr_reader :codigo
   attr_accessor :titulo, :descricao, :dt_realizacao, :sala, :equipamentos, :responsavel
   
-  def initialize(codigo, titulo, descricao, dt_realizacao, sala, equipamentos = [], responsavel)
+  def initialize(codigo, titulo, descricao, dt_realizacao, sala, equipamentos,responsavel)
     @codigo = codigo
     @titulo = titulo
     @descricao = descricao

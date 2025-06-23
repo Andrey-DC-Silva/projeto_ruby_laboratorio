@@ -35,8 +35,7 @@ tecnico1 = Tecnico.new(
   "Carlos Silva",
   "123.456.789-01",
   Date.strptime("10/03/1985", formato),
-  "Manutenção de Equipamentos",
-  nil
+  "Manutenção de Equipamentos"
 )
 tecnico1.adicionar_equipamento(eq1)
 
@@ -45,8 +44,7 @@ pesquisador1 = Pesquisador.new(
   "Ana de Lima",
   "012.221.123-20",
   Date.strptime("20/10/2000", formato),
-  "Virologia",
-  nil
+  "Virologia"
 )
 pesquisador1.adicionar_afiliacao("INS")
 
@@ -55,8 +53,7 @@ pesquisador2 = Pesquisador.new(
   "Roberto Fonseca",
   "123.451.921-12",
   Date.strptime("10/02/1990", formato),
-  "Biologia",
-  nil
+  "Biologia"
 )
 pesquisador2.adicionar_afiliacao("UFRGS")
 
@@ -65,9 +62,7 @@ projeto1 = Projeto.new(
   "O objetivo da pesquisa é de compreender e documentar a efetividade do tratamento padrão utilizado no combate ao Vírus X",
   Date.strptime("10/06/2021", formato),
   Date.strptime("12/01/2023", formato),
-  "Finalizado",
-  nil,
-  nil
+  "Finalizado"
 )
 
 exp1 = Experimento.new(
@@ -76,7 +71,6 @@ exp1 = Experimento.new(
   "Utilização do microscópio para análise da capacidade de sobreviver e se multiplicar mesmo na presença de medicamentos antivirais que normalmente o controlariam.",
   Date.strptime("08/08/2021", formato),
   sala1,
-  nil,
   pesquisador2
 )
 
@@ -86,7 +80,6 @@ exp2 = Experimento.new(
   "Organização, análise e documentação dos dados adquiridos",
   Date.strptime("01/09/2021", formato),
   sala2,
-  nil,
   pesquisador1
 )
 
@@ -112,3 +105,5 @@ projeto1.adicionar_experimento(exp2)
  exp1.mostrar_resumo
  projeto1.mostrar_dados
  projeto1.mostrar_resumo
+
+ #ruby Laboratorio.rb

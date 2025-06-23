@@ -7,7 +7,7 @@ class Tecnico < Pessoa
   include Mostrar
   attr_accessor :especializacao, :equipamentos
 
-  def initialize(id, nome, cpf, dt_nasc, especializacao, equipamentos = [])
+  def initialize(id, nome, cpf, dt_nasc, especializacao, equipamentos)
     super(id, nome, cpf, dt_nasc)
     @especializacao = especializacao
     @equipamentos = []

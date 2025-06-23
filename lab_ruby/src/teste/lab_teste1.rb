@@ -14,17 +14,20 @@ formato = '%d/%m/%Y'
 sala1 = Sala.new(
   "A101",
   "Laboratório de Biologia", 
-  "Livre"
+  "Livre",
+  nil
 )
 sala2 = Sala.new(
   "A201", 
   "Sala de Pesquisas", 
-  "Livre"
+  "Livre",
+  nil
 )
 sala3 = Sala.new(
   "B102", 
   "Laboratório de Química", 
-  "Livre"
+  "Livre",
+  nil
 )
 
 eq1 = Equipamento.new(
@@ -51,7 +54,7 @@ tecnico1 = Tecnico.new(
   "Carlos Silva", 
   "123.456.789-01", 
   Date.strptime("10/03/1985", formato), 
-  "Manutenção de Equipamentos", 
+  "Manutenção de Equipamentos",
   nil
 )
 tecnico2 = Tecnico.new(
@@ -59,7 +62,7 @@ tecnico2 = Tecnico.new(
   "Joana Nunes", 
   "987.654.321-00", 
   Date.strptime("15/08/1980", formato), 
-  "Gerenciamento de Laboratório", 
+  "Gerenciamento de Laboratório",
   nil
 )
 
@@ -88,7 +91,7 @@ pesquisador3 = Pesquisador.new(
   "Luiza Torres", 
   "321.654.987-00", 
   Date.strptime("25/11/1992", formato), 
-  "Química Orgânica", 
+  "Química Orgânica",
   nil
 )
 
@@ -131,7 +134,7 @@ exp2 = Experimento.new(
   "Documentação e análise de dados anteriores", 
   Date.strptime("01/09/2021", formato), 
   sala2, 
-  nil, 
+  nil,
   pesquisador1
 )
 exp3 = Experimento.new(
@@ -171,9 +174,35 @@ projeto2.adicionar_pesquisador(pesquisador3)
 projeto2.adicionar_experimento(exp3)
 projeto2.adicionar_experimento(exp4)
 
-projeto1.mostrar_dados
 
-#[sala1, sala2, sala3].each do |s|
-#  s.mostrar_resumo
-#  s.mostrar_dados
-#end
+[sala1, sala2, sala3].each do |s|
+ s.mostrar_resumo
+ s.mostrar_dados
+end
+  
+[exp1, exp2, exp3, exp4].each do |x|
+ x.mostrar_resumo
+ x.mostrar_dados
+end
+
+[eq1, eq2, eq3].each do |e|
+ e.mostrar_resumo
+ e.mostrar_dados
+end
+
+[tecnico1, tecnico2].each do |t|
+ t.mostrar_resumo
+ t.mostrar_dados
+end
+
+[pesquisador1, pesquisador2, pesquisador3].each do |p|
+ p.mostrar_resumo
+ p.mostrar_dados
+end
+
+[projeto1, projeto2].each do |pr|
+ pr.mostrar_resumo
+ pr.mostrar_dados
+end
+
+#ruby lab_teste1.rb

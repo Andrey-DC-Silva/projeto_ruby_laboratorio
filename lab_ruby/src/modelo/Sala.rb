@@ -7,7 +7,7 @@ class Sala
 
   attr_accessor :codigo, :tipo, :estado, :equipamentos
 
-  def initialize(codigo, tipo, estado, equipamentos = [])
+  def initialize(codigo, tipo, estado, equipamentos)
     @codigo = codigo
     @tipo = tipo
     @estado = estado

@@ -8,10 +8,10 @@ require_relative '../modelo/Experimento'
 
 class Projeto
   include Mostrar
-  attr_accessor :nome, :descricao, :dt_inicio, :dt_fim, :status, :pesquisadores, :experimentos
+  attr_accessor :titulo, :descricao, :dt_inicio, :dt_fim, :status, :pesquisadores, :experimentos
 
-  def initialize(nome, descricao, dt_inicio, dt_fim, status, pesquisadores = [], experimentos = [])
-    @nome = nome
+  def initialize(titulo, descricao, dt_inicio, dt_fim, status, pesquisadores, experimentos)
+    @titulo = titulo
     @descricao = descricao
     @dt_inicio = dt_inicio
     @dt_fim = dt_fim
@@ -42,6 +42,8 @@ class Projeto
     puts "Início: #{@dt_inicio.strftime('%d/%m/%Y')}"
     if @dt_fim
       puts "Fim: #{@dt_fim.strftime('%d/%m/%Y')}"
+    else
+      puts ""
     end
     puts "Status: #{@status}"
     
@@ -70,6 +72,8 @@ class Projeto
     print " - Início: #{@dt_inicio.strftime('%d/%m/%Y')}"
     if @dt_fim
       puts " - Fim: #{@dt_fim.strftime('%d/%m/%Y')}"
+    else
+      puts ""
     end
     puts "==============================="
   end
