@@ -2,8 +2,6 @@ require_relative '../modelo/Mostrar'
 require_relative '../modelo/Pessoa'
 
 class Pesquisador < Pessoa
-  include Mostrar
-  attr_reader :id 
   attr_accessor :area_atuacao, :afiliacoes
 
   def initialize(nome, id, cpf, dt_nasc, area_atuacao, afiliacoes)

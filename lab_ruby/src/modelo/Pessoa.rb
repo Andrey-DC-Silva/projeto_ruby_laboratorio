@@ -1,6 +1,9 @@
 require 'date' # equivalente ao LocalDate
+require_relative '../modelo/Mostrar'
 
 class Pessoa
+  include Mostrar
+
   attr_reader :id
   attr_accessor :nome, :cpf, :dt_nasc
 

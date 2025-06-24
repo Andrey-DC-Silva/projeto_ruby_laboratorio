@@ -1,10 +1,9 @@
 require_relative '../modelo/Mostrar'
-require_relative '../modelo/Pessoa'
 require_relative '../modelo/Equipamento'
 require_relative '../modelo/Sala'
+require_relative '../modelo/Pessoa'
 
 class Tecnico < Pessoa
-  include Mostrar
   attr_accessor :especializacao, :equipamentos
 
   def initialize(id, nome, cpf, dt_nasc, especializacao, equipamentos)
