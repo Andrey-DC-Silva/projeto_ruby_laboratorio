@@ -35,7 +35,7 @@ class Experimento
     puts "Descrição: #{descricao}"
     puts "Data de Realização: #{dt_realizacao.strftime('%d/%m/%Y')}"
     puts "Sala: #{sala}"
-    puts "Responsável: #{responsavel}"
+    puts "Responsável - ID: #{responsavel.id} / #{responsavel}"
     puts "- Equipamentos Utilizados:"
     if @equipamentos_usados.nil? || @equipamentos_usados.empty?# nil == null
       puts "  Nenhum equipamento registrado."
@@ -48,7 +48,14 @@ class Experimento
   end
 
   def mostrar_resumo
-    
+    puts
+    puts "==============================="
+    puts "--- Resumo do Experimento ---"
+    puts "Codigo: #{codigo}"
+    puts "Titulo: #{titulo}"
+    puts "Data: #{dt_realizacao.strftime('%d/%m/%Y')}"
+    puts "Responsável - Id: #{responsavel.id} / #{responsavel}"
+    puts "==============================="
   end
 
 end
