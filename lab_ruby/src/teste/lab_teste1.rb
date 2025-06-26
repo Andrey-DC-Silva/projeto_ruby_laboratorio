@@ -179,7 +179,7 @@ projeto2.adicionar_experimento(exp4)
  s.mostrar_resumo
  s.mostrar_dados
 end
-  
+
 [exp1, exp2, exp3, exp4].each do |x|
  x.mostrar_resumo
  x.mostrar_dados

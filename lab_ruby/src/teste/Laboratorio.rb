@@ -14,13 +14,15 @@ formato = '%d/%m/%Y'
 sala1 = Sala.new(
   "A101",
   "Laboratório de Biologia",
-  "Livre"
+  "Livre",
+  nil
 )
 
 sala2 = Sala.new(
   "A201",
   "Sala de Pesquisas",
-  "Livre"
+  "Livre",
+  nil
 )
 
 eq1 = Equipamento.new(
@@ -35,7 +37,8 @@ tecnico1 = Tecnico.new(
   "Carlos Silva",
   "123.456.789-01",
   Date.strptime("10/03/1985", formato),
-  "Manutenção de Equipamentos"
+  "Manutenção de Equipamentos",
+  nil
 )
 tecnico1.adicionar_equipamento(eq1)
 
@@ -44,7 +47,8 @@ pesquisador1 = Pesquisador.new(
   "Ana de Lima",
   "012.221.123-20",
   Date.strptime("20/10/2000", formato),
-  "Virologia"
+  "Virologia",
+  nil
 )
 pesquisador1.adicionar_afiliacao("INS")
 
@@ -53,7 +57,8 @@ pesquisador2 = Pesquisador.new(
   "Roberto Fonseca",
   "123.451.921-12",
   Date.strptime("10/02/1990", formato),
-  "Biologia"
+  "Biologia",
+  nil
 )
 pesquisador2.adicionar_afiliacao("UFRGS")
 
@@ -62,7 +67,9 @@ projeto1 = Projeto.new(
   "O objetivo da pesquisa é de compreender e documentar a efetividade do tratamento padrão utilizado no combate ao Vírus X",
   Date.strptime("10/06/2021", formato),
   Date.strptime("12/01/2023", formato),
-  "Finalizado"
+  "Finalizado",
+  nil,
+  nil
 )
 
 exp1 = Experimento.new(
@@ -71,6 +78,7 @@ exp1 = Experimento.new(
   "Utilização do microscópio para análise da capacidade de sobreviver e se multiplicar mesmo na presença de medicamentos antivirais que normalmente o controlariam.",
   Date.strptime("08/08/2021", formato),
   sala1,
+  nil,
   pesquisador2
 )
 
@@ -80,6 +88,7 @@ exp2 = Experimento.new(
   "Organização, análise e documentação dos dados adquiridos",
   Date.strptime("01/09/2021", formato),
   sala2,
+  nil,
   pesquisador1
 )
 
@@ -93,16 +102,29 @@ projeto1.adicionar_pesquisador(pesquisador2)
 projeto1.adicionar_experimento(exp1)
 projeto1.adicionar_experimento(exp2)
 
+
+
  sala1.mostrar_dados
  sala1.mostrar_resumo
+ sala2.mostrar_dados
+ sala2.mostrar_resumo
+
  eq1.mostrar_dados
  eq1.mostrar_resumo
+ 
  tecnico1.mostrar_dados
  tecnico1.mostrar_resumo
+ 
  pesquisador1.mostrar_dados
  pesquisador1.mostrar_resumo
+ pesquisador2.mostrar_dados
+ pesquisador2.mostrar_resumo
+ 
  exp1.mostrar_dados
  exp1.mostrar_resumo
+ exp2.mostrar_dados
+ exp2.mostrar_resumo
+ 
  projeto1.mostrar_dados
  projeto1.mostrar_resumo
 
